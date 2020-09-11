@@ -2,15 +2,22 @@
 window.location.replace(getUrl());
 
 function getUrl() {
-  return `https://www.google.com/maps/@${getCoord()},${getCoord()},15z`;
+
+  const lat = getCoord();
+  const lon = getCoord();
+  const url = `https://www.google.com/maps/@${lat},${lon},15z`;
+
+  return url;
 }
 
 function getCoord() {
-  let val = Math.random() * 100;
+  
+  let coord = Math.random() * 100;
+  
   if (Math.random() < 0.5) {
-    val *= -1;
+    coord *= -1;
   }
 
-  return val;
+  return coord;
 }
 </script>
